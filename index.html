@@ -1,161 +1,31 @@
-<!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DANXY-STORE</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .container {
-            margin-top: 50px;
-        }
-        /* Efek tombol */
-        .list-button, .service-button {
-            background: linear-gradient(45deg, #ff416c, #ff4b2b);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            margin: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            border-radius: 30px;
-            box-shadow: 0 8px 15px rgba(255, 75, 43, 0.5);
-            transition: all 0.3s ease;
-            perspective: 1000px; /* Menambahkan perspektif untuk efek 3D */
-        }
-        .list-button:hover, .service-button:hover {
-            background: linear-gradient(45deg, #ff4b2b, #ff416c);
-            box-shadow: 0 12px 20px rgba(255, 75, 43, 0.7);
-            transform: translateY(-5px) rotateY(10deg); /* Efek 3D saat hover */
-        }
-        .list-button:active, .service-button:active {
-            transform: scale(0.95) rotateY(-5deg); /* Efek saat tombol ditekan */
-            box-shadow: 0 4px 10px rgba(255, 75, 43, 0.3);
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title> 🇮🇩 SUMUT EROR SYSTEM 🇮🇩 </title>
+  <script src="https://cdn.tailwindcss.com"> </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+    body {
+      font-family: 'Special Elite', monospace;
+      background-color: #000;
+    }
+  </style>
 </head>
-<body>
-    <!-- Halaman Utama -->
-    <div id="home" class="container">
-        <h1>DANXY-STORE</h1>
-        <button class="list-button" onclick="showList()">KLIK UNTUK MELIHAT LIST DANXY-STORE</button>
-        <div id="service-list" class="hidden">
-            <ul style="list-style-type: none; padding: 0;">
-                <li><button class="service-button" onclick="showPage('jasa-bug')">💣 JASA BUG</button></li>
-                <li><button class="service-button" onclick="showPage('panel')">PANEL</button></li>
-                <li><button class="service-button" onclick="showPage('murbug')">OPEN MURBUG</button></li>
-                <li><button class="service-button" onclick="showPage('rename-sc')">RENAME SC</button></li>
-                <li><button class="service-button" onclick="showPage('sc-bot')">SC BOT</button></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Halaman Jasa Bug -->
-    <div id="jasa-bug" class="container hidden">
-        <h1>LIST JASA BUG NOMOR</h1>
-        <button class="service-button" onclick="redirectToWhatsApp('BUG NOMOR 1 TARGET 3.000')">BUG NOMOR 1 TARGET = 3.000</button>
-        <button class="service-button" onclick="redirectToWhatsApp('BUG NOMOR 2 TARGET 3.500')">BUG NOMOR 2 TARGET = 3.500</button>
-        <button class="service-button" onclick="redirectToWhatsApp('BUG NOMOR 3 TARGET 4.000')">BUG NOMOR 3 TARGET = 4.000</button>
-
-        <h1>LIST BUG NOMOR VVIP</h1>
-        <button class="service-button" onclick="redirectToWhatsApp('BUG NOMOR VVIP 1 TARGET 4.000')">BUG NOMOR 1 TARGET = 4.000</button>
-        <button class="service-button" onclick="redirectToWhatsApp('BUG NOMOR VVIP 2 TARGET 4.500')">BUG NOMOR 2 TARGET = 4.500</button>
-        <button class="service-button" onclick="redirectToWhatsApp('BUG NOMOR VVIP 3 TARGET 5.000')">BUG NOMOR 3 TARGET = 5.000</button>
-
-        <br><br>
-        <button class="list-button" onclick="goBack()">🔎 Kembali</button>
-    </div>
-
-    <!-- Halaman Panel -->
-    <div id="panel" class="container hidden">
-        <h1>LIST PANEL</h1>
-        <button class="service-button" onclick="redirectToWhatsApp('PANEL 3GB Rp. 1.500')">3GB Rp. 1.500</button>
-        <button class="service-button" onclick="redirectToWhatsApp('PANEL 4GB Rp. 2.000')">4GB Rp. 2.000</button>
-        <button class="service-button" onclick="redirectToWhatsApp('PANEL 5GB Rp. 2.500')">5GB Rp. 2.500</button>
-        <button class="service-button" onclick="redirectToWhatsApp('PANEL 5GB Rp. 3.000')">5GB Rp. 3.000</button>
-        <button class="service-button" onclick="redirectToWhatsApp('PANEL 6GB Rp. 3.500')">6GB Rp. 3.500</button>
-        <button class="service-button" onclick="redirectToWhatsApp('PANEL Unlimited Rp. 6.000')">Unlimited Rp. 6.000</button>
-
-        <br><br>
-        <button class="list-button" onclick="goBack()">🔎 Kembali</button>
-    </div>
-
-    <!-- Halaman Open MURBUG -->
-    <div id="murbug" class="container hidden">
-        <h1>LIST MURBUG</h1>
-        <button class="service-button" onclick="redirectToWhatsApp('MURBUG 15 HARI Rp. 5.000')">15 HARI = Rp. 5.000</button>
-        <button class="service-button" onclick="redirectToWhatsApp('MURBUG 30 HARI Rp. 10.000')">30 HARI = Rp. 10.000</button>
-
-        <br><br>
-        <button class="list-button" onclick="goBack()">🔎 Kembali</button>
-    </div>
-
-    <!-- Halaman Rename SC -->
-    <div id="rename-sc" class="container hidden">
-        <h1>LIST RENAME SC</h1>
-        <button class="service-button" onclick="redirectToWhatsApp('RENAME SAMPAI AKAR Rp. 5.000')">RENAME SAMPAI AKAR = Rp. 5.000</button>
-
-        <br><br>
-        <button class="list-button" onclick="goBack()">🔎 Kembali</button>
-    </div>
-
-    <!-- Halaman SC BOT -->
-    <div id="sc-bot" class="container hidden">
-        <h1>LIST SC BOT</h1>
-        <button class="service-button" onclick="redirectToWhatsApp('Saya ingin membeli SC BOT')">KLIK UNTUK CHAT DANXY</button>
-
-        <br><br>
-        <button class="list-button" onclick="goBack()">🔎 Kembali</button>
-    </div>
-
-    <script>
-        function showList() {
-            document.getElementById('service-list').classList.toggle('hidden');
-        }
-
-        function showPage(pageId) {
-            const currentPage = document.querySelector('.container:not(.hidden)');
-            if (currentPage) {
-                currentPage.classList.add('hidden');
-            }
-            const newPage = document.getElementById(pageId);
-            newPage.classList.remove('hidden');
-            newPage.style.opacity = 0; // Mulai dengan opacity 0
-            setTimeout(() => {
-                newPage.style.transition = "opacity 0.5s ease-in-out";
-                newPage.style.opacity = 1; // Fade in
-            }, 10);
-        }
-
-        function goBack() {
-            const currentPage = document.querySelector('.container:not(.hidden)');
-            if (currentPage) {
-                currentPage.style.opacity = 0; // Mulai dengan opacity 0
-                setTimeout(() => {
-                    currentPage.classList.add('hidden');
-                    document.getElementById('home').classList.remove('hidden');
-                    document.getElementById('home').style.opacity = 0; // Mulai dengan opacity 0
-                    setTimeout(() => {
-                        document.getElementById('home').style.transition = "opacity 0.5s ease-in-out";
-                        document.getElementById('home').style.opacity = 1; // Fade in
-                    }, 10);
-                }, 500); // Tunggu animasi selesai sebelum menyembunyikan
-            }
-        }
-
-        function redirectToWhatsApp(service) {
-            const phoneNumber = "6285741852394"; 
-            const message = encodeURIComponent(`Halo, saya ingin order ${service}`);
-            window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
-        }
-    </script>
+<body class="text-center text-white min-h-screen flex flex-col items-center justify-center px-4">
+  <img alt="Red circular emblem with golden eagle in center and text 'SUMUT EROR SYSTEM FOR CYBER TO ATTACK' around the circle" class="mx-auto" height="200" src="https://files.catbox.moe/mx3ded.jpg" width="200"/>
+  <p class="mt-2 text-green-400 text-lg md:text-xl tracking-widest">Situs Anda Telah di Retas</p>
+  <p class="mt-6 text-gray-300 text-lg md:text-xl tracking-widest"> 🇮🇩 SUMUT EROR SYSTEM 🇮🇩 </p>
+  <p class="mt-4 text-red-600 font-bold text-2xl md:text-3xl tracking-widest"> SIGIT </p>
+  <p class="mt-2 text-yellow-400 text-xs md:text-sm font-mono tracking-widest"> PANGLIMA JATIM | DANXY | XPLOIT </p>
+  <p class="mt-2 text-white text-xs md:text-sm font-mono tracking-widest"> EMPAT ARAH MENCARI KELUARGA BILA ADA MUSUH PANTANG TUNDUK KEPALA </p>
+  <audio class="mt-4 rounded-full" controls="" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"> </audio>
+  <p class="mt-4 text-green-400 text-lg md:text-xl tracking-widest">
+    <a href="https://wa.me/6285167820107" target="_blank">
+      <i class="fab fa-whatsapp"></i> 6285167820107
+    </a>
+  </p>
+  <p class="mt-8 text-red-100 text-base md:text-lg max-w-md mx-auto leading-relaxed whitespace-pre-wrap"> PENTING BAGI PEMERINTAH UNTUK LEBIH MENDENGARKAN SUARA MASYARAKAT KECIL, KARENA KEBIJAKAN YANG BAIK ADALAH KEBIJAKAN YANG BERPIHAK PADA SEMUA LAPISAN MASYARAKAT </p>
 </body>
 </html>
